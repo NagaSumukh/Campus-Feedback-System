@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homepage</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <center>
+            <header>
+                <h1>Survey Form</h1>
+            </header>
+        </center>
+
+        <div class="container">
+            <form action="index.html" method="put">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="fname">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="fname" name="firstname" id="first_name" placeholder="Your name.." required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="lname">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="lname" name="lastname" id="last_name" placeholder="Your last name.." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="street_address">Street Address:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="street_address" name="street_address" id="street_address" placeholder="Street address.." required>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-25">
+                        <label for="city">City:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="city" name="city" id="city" placeholder="City name.." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="state">State:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="state" name="state" id="state" placeholder="State name.." required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="zip">Zip:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="zip" name="zip" id="zip" placeholder="Zip code.." required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="telephone">Telephone:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="tel" id="telephone" name="telephone" id="telephone" placeholder="Telephone number.." required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="email">Email:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="email" id="email" name="email" id="email" placeholder="Email.." required>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-25">
+                        <label for="date_of_survey">Date:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" id="date_of_survey" name="date_of_survey" id="date_of_survey"required>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <label>What did you like most about the campus?</label>
+                    <ul>
+                    <input type="checkbox" name="likes[]" value="students">Students
+                    <input type="checkbox" name="likes[]" value="location">Location
+                    <input type="checkbox" name="likes[]" value="campus">Campus
+                    <input type="checkbox" name="likes[]" value="atmosphere">Atmosphere
+                    <input type="checkbox" name="likes[]" value="dorm_rooms">Dorm Rooms
+                    <input type="checkbox" name="likes[]" value="sports">Sports
+                    </ul>
+                </div>
+
+                <label>How did you become interested in the university?</label>
+                <ul>
+                <input type="radio" name="interest" value="friends">Friends
+                <input type="radio" name="interest" value="television">Television
+                <input type="radio" name="interest" value="internet">Internet
+                <input type="radio" name="interest" value="other">Other
+                </ul>
+            
+                <label for="recommendation">How likely are you to recommend this school to other prospective students?</label>
+                <select name="recommendation" id="recommendation">
+                <option value="very_likely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+                </select>
+            
+                <label for="raffle">Raffle:</label>
+                <textarea name="raffle" id="raffle" rows="5" required></textarea>
+            
+                <label for="comments">Additional Comments:</label>
+                <textarea name="comments" id="comments" rows="5"></textarea>
+
+                <br>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+
+        </div>
+    </body>
+</html>
