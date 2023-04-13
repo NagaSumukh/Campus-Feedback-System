@@ -43,7 +43,8 @@ pipeline {
           stage('Deploying Rancher to single node') {
              steps {
                 script{
-                   sh 'kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
+                    sh "kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:${env.TIMESTAMP}"
+//                    sh 'kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
                 }
              }
           }
@@ -51,7 +52,8 @@ pipeline {
         stage('Deploying Rancher to Load Balancer') {
            steps {
               script{
-                 sh 'kubectl set image deployment/deploylb container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
+                  sh "kubectl set image deployment/deploylb container-0=nagasumukh/newestimg:${env.TIMESTAMP}"
+//                  sh 'kubectl set image deployment/deploylb container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
               }
            }
         }
