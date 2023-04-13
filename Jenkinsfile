@@ -1,6 +1,5 @@
 pipeline {
     environment {
-        DOCKERHUB_PASS = credentials('nagasumukh321!')
         registry = "nagasumukh/newestimg"
         registryCredential = 'Dockerhub'
     }
