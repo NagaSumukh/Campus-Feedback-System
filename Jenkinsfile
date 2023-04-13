@@ -1,6 +1,7 @@
 pipeline {
     environment {
         DOCKERHUB_PASS = credentials('nagasumukh321!')
+        registry = "nagasumukh/newestimg"
         registryCredential = 'Dockerhub'
     }
     agent any
@@ -15,7 +16,7 @@ pipeline {
                         sh 'echo ${BUILD_TIMESTAMP}'
 
                         docker.withRegistry('',registryCredential){
-                        def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+                            def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}"})
 
 
 
