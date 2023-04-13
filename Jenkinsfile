@@ -21,7 +21,7 @@ pipeline {
 
 
 
-                        sh "docker login -u nagasumukh -p ${DOCKERHUB_PASS}"
+                        sh "docker login -u Nagasumukh -p ${DOCKERHUB_PASS}"
                         def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
 
                    }
