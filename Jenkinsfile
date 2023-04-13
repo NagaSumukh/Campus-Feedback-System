@@ -3,6 +3,7 @@ pipeline {
         registry = "nagasumukh/newestimg"
         registryCredential = 'Dockerhub'
         DOCKERHUB_PASS = credentials('Dockerhub')
+        TIMESTAMP = new Date().format("yyyyMMdd_HHmmss")
     }
     agent any
 
@@ -16,13 +17,13 @@ pipeline {
                         sh 'echo ${BUILD_TIMESTAMP}'
 
                         docker.withRegistry('',registryCredential){
-                            def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+                            def customImage = docker.build("nagasumukh/newestimg:${env.TIMESTAMP}")
                         }
 
 
 
 //                         sh "docker login -u Nagasumukh -p ${DOCKERHUB_PASS}"
-//                         def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+//                         def customImage = docker.build("nagasumukh/newestimg:${env.TIMESTAMP}")
 
                    }
                 }
@@ -31,7 +32,7 @@ pipeline {
             stage('Push to Docker Hub') {
                 steps {
                     script {
-                        sh 'docker push nagasumukh/newestimg:${BUILD_TIMESTAMP}'
+                        sh 'docker push nagasumukh/newestimg:${env.TIMESTAMP}'
                     }
                 }
             }
@@ -39,7 +40,7 @@ pipeline {
           stage('Deploying Rancher to single node') {
              steps {
                 script{
-                   sh 'kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:+${BUILD_TIMESTAMP}'
+                   sh 'kubectl set image deployment/deploymain container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
                 }
              }
           }
@@ -47,7 +48,7 @@ pipeline {
         stage('Deploying Rancher to Load Balancer') {
            steps {
               script{
-                 sh 'kubectl set image deployment/deploylb container-0=nagasumukh/newestimg:+${BUILD_TIMESTAMP}'
+                 sh 'kubectl set image deployment/deploylb container-0=nagasumukh/newestimg:${env.TIMESTAMP}'
               }
            }
         }
