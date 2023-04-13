@@ -15,14 +15,14 @@ pipeline {
                         sh 'jar -cvf Project1-SWE.war -C src/main/webapp/ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
 
-//                         docker.withRegistry('',registryCredential){
-//                             def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
-//                         }
+                        docker.withRegistry('',registryCredential){
+                            def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+                        }
 
 
 
-                        sh "docker login -u Nagasumukh -p ${DOCKERHUB_PASS}"
-                        def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+//                         sh "docker login -u Nagasumukh -p ${DOCKERHUB_PASS}"
+//                         def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
 
                    }
                 }
