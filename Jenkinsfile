@@ -16,7 +16,8 @@ pipeline {
                         sh 'echo ${BUILD_TIMESTAMP}'
 
                         docker.withRegistry('',registryCredential){
-                            def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}"})
+                            def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+                        }
 
 
 
