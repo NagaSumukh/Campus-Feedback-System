@@ -11,7 +11,7 @@ pipeline {
                 steps {
                     script {
                         sh 'rm -rf *.war'
-                        sh 'jar -cvf Project1-SWE.war -C WebContent/ .'
+                        sh 'jar -cvf Project1-SWE.war -C src/main/webapp/ .'
                         sh 'echo ${BUILD_TIMESTAMP}'
 
                         docker.withRegistry('',registryCredential){
