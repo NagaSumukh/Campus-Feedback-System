@@ -9,9 +9,8 @@ pipeline {
         stage('Build survey page') {
             steps {
                 script {
-                	checkout scm
                 	sh 'rm -rf *.war'
-                	sh 'jar -cvf Project1-SWE.war -C WebContent/ .'
+                	sh 'jar -cvf Project1-SWE.war -C src/main/webapp/ .'
                     sh 'echo ${BUILD_TIMESTAMP}'
                     sh "docker login -u nagasumukh -p ${DOCKERHUB_PASS}"
                     def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
