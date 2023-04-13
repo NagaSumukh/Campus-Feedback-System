@@ -32,7 +32,10 @@ pipeline {
             stage('Push to Docker Hub') {
                 steps {
                     script {
-                        sh 'docker push nagasumukh/newestimg:${env.TIMESTAMP}'
+                        docker.withRegistry('',registryCredential){
+                          sh "docker push nagasumukh/newestimg:${env.TIMESTAMP}"
+                       }
+//                         sh 'docker push nagasumukh/newestimg:${env.TIMESTAMP}'
                     }
                 }
             }
