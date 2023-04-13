@@ -1,6 +1,7 @@
 pipeline {
     environment {
         DOCKERHUB_PASS = credentials('nagasumukh321!')
+        registryCredential = 'Dockerhub'
     }
     agent any
 
@@ -12,8 +13,14 @@ pipeline {
                 	sh 'rm -rf *.war'
                 	sh 'jar -cvf Project1-SWE.war -C src/main/webapp/ .'
                     sh 'echo ${BUILD_TIMESTAMP}'
-                    sh "docker login -u nagasumukh -p ${DOCKERHUB_PASS}"
+                    
+                    docker.withRegistry('',registryCredential){
                     def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
+                    
+                    
+                    
+//                     sh "docker login -u nagasumukh -p ${DOCKERHUB_PASS}"
+//                     def customImage = docker.build("nagasumukh/newestimg:+${BUILD_TIMESTAMP}")
                    
                }
             }
