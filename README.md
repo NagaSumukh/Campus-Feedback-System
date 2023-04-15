@@ -1,5 +1,5 @@
 # SurveyPage
-Video of the demo : [Link to video] (https://gmuedu-my.sharepoint.com/:v:/g/personal/nhunsurd_gmu_edu/EaGxmW2VVIdCh7PHzM1xdVoBXruyD_mUx1sGNd0-ZgKGlQ?e=ppQm0p)
+Video of the demo : [Link to video] (https://gmuedu-my.sharepoint.com/:v:/g/personal/nhunsurd_gmu_edu/Ec2YrkKzCy1Fn41tuGLf-oUBDF6_8vMuR5AcJzCijw-fnQ?e=ygCIMh)
 </br>
 Detailed explanation on this [Page] (https://github.com/NagaSumukh/SurveyPage/blob/main/SWE%20-%20645%20Assignment%202.pdf)
 
